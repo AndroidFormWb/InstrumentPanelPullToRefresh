@@ -163,15 +163,15 @@ public class NormalRotateLoadingLayout extends LoadingLayout {
 	        if(angle3 > 180f){
 	        	float angle1 = angle3-180f;
 	        	
-        		mArrowImageView.setRotation(180f+angle1%45);
-                mSuccessTopMask.setPivotX(mSuccessTopMask.getMeasuredWidth()/2f);
-                mSuccessTopMask.setPivotY(mSuccessTopMask.getMeasuredHeight()); 
-                mSuccessTopMask.setRotation(180f);
+        		mArrowImageView.setRotation(180f+angle1%35);//超过界限后，让它在35度不断重复摆动，造成加速失败效果
+                	mSuccessTopMask.setPivotX(mSuccessTopMask.getMeasuredWidth()/2f);
+                	mSuccessTopMask.setPivotY(mSuccessTopMask.getMeasuredHeight()); 
+                	mSuccessTopMask.setRotation(180f);//白色挡超过180度后就不让它旋转
 	        }else {
 	        	mArrowImageView.setRotation(angle3);
-	            mSuccessTopMask.setPivotX(mSuccessTopMask.getMeasuredWidth()/2f);
-	            mSuccessTopMask.setPivotY(mSuccessTopMask.getMeasuredHeight()); 
-	            mSuccessTopMask.setRotation(angle3);
+	        	mSuccessTopMask.setPivotX(mSuccessTopMask.getMeasuredWidth()/2f);
+	        	mSuccessTopMask.setPivotY(mSuccessTopMask.getMeasuredHeight()); 
+	        	mSuccessTopMask.setRotation(angle3);
 	        }
         }
         
