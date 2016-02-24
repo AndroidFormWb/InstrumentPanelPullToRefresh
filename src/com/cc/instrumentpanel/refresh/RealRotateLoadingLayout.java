@@ -157,7 +157,7 @@ public class RealRotateLoadingLayout extends LoadingLayout {
         
 	        if(angle3 > 150f){
 	        	float angle1 = angle3-150f;
-	        	mArrowImageView.setRotation(150f+angle1%35);
+	        	mArrowImageView.setRotation(150f+angle1%35);//超过界限后，让它在35度不断重复摆动，造成加速失败效果
 	        		
 	        }else {
 	        	mArrowImageView.setRotation(angle3);
